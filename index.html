@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}</style>
+<title>สรุปประชุมแอปจองรถ 23 พฤศจิกายน 2569</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Thai:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column under a sticky section nav; timelines are two-column rows with mono timestamps */
+:root {
+  --bg: #f4f5f7;
+  --surface: #ffffff;
+  --ink: #1b2027;
+  --muted: #5a6371;
+  --line: #dadee5;
+  --accent: #b3261e;
+  --accent-soft: #fbeceb;
+  --note: #fff6e3;
+  --note-line: #ead7a6;
+  --note-ink: #5a4412;
+  --font-display: "Anuphan", "IBM Plex Sans Thai", "Noto Sans Thai", "Thonburi", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Thai", "Noto Sans Thai", "Thonburi", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111418; --surface: #181c22; --ink: #e4e7ec; --muted: #9aa3af; --line: #2a3039;
+    --accent: #ef6a5c; --accent-soft: #2e1a19; --note: #29230f; --note-line: #4d4122; --note-ink: #e8d7a8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111418; --surface: #181c22; --ink: #e4e7ec; --muted: #9aa3af; --line: #2a3039;
+  --accent: #ef6a5c; --accent-soft: #2e1a19; --note: #29230f; --note-line: #4d4122; --note-ink: #e8d7a8;
+  color-scheme: dark;
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.75;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 50rem;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+.hero { padding-block: 44px 28px; display: grid; gap: 18px; }
+.eyebrow { margin: 0; color: var(--accent); font-weight: 600; font-size: 15px; }
+h1 {
+  margin: 0; font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(30px, 5.4vw, 42px); line-height: 1.25; text-wrap: balance;
+}
+.lede { margin: 0; color: var(--muted); font-size: 17px; max-width: 40rem; }
+.files { display: flex; flex-wrap: wrap; gap: 12px; }
+.file {
+  flex: 1 1 220px; min-width: 0; display: grid; gap: 2px;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px;
+}
+.file .k { font-size: 13.5px; color: var(--muted); }
+.file .v { font-family: var(--font-display); font-weight: 600; font-size: 18px; line-height: 1.4; }
+.file .d { font-family: var(--font-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.note {
+  margin: 0; background: var(--note); border: 1px solid var(--note-line); color: var(--note-ink);
+  border-radius: 10px; padding: 12px 16px; font-size: 15px;
+}
+
+.toc {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.toc .wrap { display: flex; gap: 2px 20px; overflow-x: auto; }
+.toc a { flex: none; display: flex; align-items: center; min-height: 44px; color: var(--muted); text-decoration: none; font-weight: 500; font-size: 15px; }
+.toc a:hover { color: var(--ink); }
+.toc a:focus-visible { outline-offset: -2px; }
+
+main section { padding-block: 40px 12px; scroll-margin-top: calc(56px + env(safe-area-inset-top, 0px)); }
+main section + section { border-top: 1px solid var(--line); }
+h2 {
+  margin: 0 0 2px; font-family: var(--font-display); font-weight: 700;
+  font-size: 26px; line-height: 1.35; text-wrap: balance;
+}
+.sec-meta { margin: 0 0 20px; color: var(--muted); font-size: 15px; }
+h3 {
+  margin: 30px 0 8px; font-family: var(--font-display); font-weight: 600;
+  font-size: 19px; line-height: 1.4; text-wrap: balance;
+}
+h3 .ref { font-family: var(--font-mono); font-weight: 400; font-size: 13px; color: var(--muted); margin-left: 6px; white-space: nowrap; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 15.5px; }
+th {
+  text-align: left; font-weight: 500; font-size: 13.5px; color: var(--muted);
+  padding: 0 12px 8px 0; border-bottom: 1px solid var(--line);
+}
+td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+td.t {
+  width: 1%; white-space: nowrap; padding-right: 20px;
+  font-family: var(--font-mono); font-size: 13.5px; color: var(--muted);
+  font-variant-numeric: tabular-nums; padding-top: 12px;
+}
+td.t small { display: block; font-size: 12px; }
+td.t .src { display: block; font-family: var(--font-body); font-size: 13px; color: var(--ink); font-weight: 500; }
+tr.key td.t { color: var(--accent); }
+tr.key td:last-child { font-weight: 600; }
+.chip {
+  display: inline-block; margin-left: 6px; padding: 3px 9px; border-radius: 999px;
+  background: var(--accent-soft); color: var(--accent); font-size: 12.5px; font-weight: 600;
+  line-height: 1.4; white-space: nowrap; vertical-align: 1px; text-decoration: none;
+}
+a.chip:hover { text-decoration: underline; }
+
+ul { margin: 6px 0; padding-left: 1.25em; }
+li { margin: 4px 0; }
+li::marker { color: var(--muted); }
+li ul { margin: 2px 0; }
+strong { font-weight: 600; }
+
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 8px; }
+.pillar { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; min-width: 0; }
+.pillar b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 19px; color: var(--accent); }
+.pillar span { color: var(--muted); font-size: 15px; }
+
+ul.open { list-style: none; padding-left: 0; }
+ul.open li { position: relative; padding-left: 26px; }
+ul.open li::before {
+  content: ""; position: absolute; left: 2px; top: 0.55em;
+  width: 11px; height: 11px; border: 1.5px solid var(--accent); border-radius: 3px;
+}
+
+ol.timeline { list-style: none; margin: 4px 0; padding: 0; }
+ol.timeline li {
+  display: grid; grid-template-columns: 5.6em minmax(0, 1fr); gap: 14px;
+  margin: 0; padding-block: 8px; border-bottom: 1px solid var(--line);
+}
+ol.timeline time {
+  font-family: var(--font-mono); font-size: 13.5px; color: var(--muted);
+  font-variant-numeric: tabular-nums; padding-top: 2px;
+}
+
+footer { padding-block: 28px 48px; color: var(--muted); font-size: 14px; }
+
+@media (max-width: 520px) {
+  h2 { font-size: 25px; }
+  td.t { padding-right: 12px; }
+  ol.timeline li { gap: 10px; }
+}
+</style>
+
+<style>
+h3[id], #timeline tr[id], #top { scroll-margin-top: calc(56px + env(safe-area-inset-top, 0px)); }
+h3 a.ref { color: var(--accent); }
+.section-link { margin-top: 16px; }
+.flow-list { padding-left: 1.3em; }
+.flow-list li { padding-left: .25em; }
+.inline-time { font-family: var(--font-mono); white-space: nowrap; }
+@media (max-width: 520px) {
+  .hero { padding-block: 32px 20px; }
+  .toc .wrap { flex-wrap: wrap; gap: 0 18px; }
+  main section, h3[id], #timeline tr[id] { scroll-margin-top: calc(100px + env(safe-area-inset-top, 0px)); }
+  td.t { white-space: normal; }
+  td.t time { white-space: nowrap; }
+  td.t time:last-child { display: block; }
+  td { padding-right: 6px; }
+  h3 a.ref { display: inline-block; }
+}
+@media print {
+  :root, :root[data-theme] {
+    --bg: white; --surface: white; --ink: #1b2027; --muted: #384251;
+    --line: #dadee5; --accent: #9e211a; --accent-soft: white;
+    --note: white; --note-line: #d3c191; --note-ink: #5a4412;
+    color-scheme: light;
+  }
+  .toc, body::before, .section-link { display: none; }
+  .hero { padding-block: 8px 16px; }
+  main section { padding-top: 18px; }
+  h2, h3 { break-after: avoid; }
+  tr, .pillar, .note { break-inside: avoid; }
+}
+</style>
+
+<style>
+  .toc .wrap { flex-wrap: nowrap; }
+  section [id] { scroll-margin-top: calc(56px + env(safe-area-inset-top, 0px)); }
+  .timeline-rows td:last-child strong { display: block; }
+  .timeline-rows td:last-child { overflow-wrap: anywhere; }
+  .timeline-rows .t time.range-part { display: inline; white-space: nowrap; }
+  .source-links { font-size: .88em; color: var(--muted); }
+  .source-links a { white-space: nowrap; }
+  footer p { margin: 6px 0; }
+  @media (max-width: 520px) {
+    main section, section [id] { scroll-margin-top: calc(100px + env(safe-area-inset-top, 0px)); }
+    .toc .wrap { flex-wrap: wrap; gap: 0 16px; }
+    .timeline-rows .to { display: block; }
+  }
+</style>
+</head>
+<body>
+<header class="wrap hero" id="top">
+  <p class="eyebrow">23 พฤศจิกายน 2569</p>
+  <h1>สรุปประชุมแอปจองรถ</h1>
+  <p class="lede">ทีมรีวิวแบบสร้างใบจองใน Figma ตั้งแต่ภาพรถและคิว ไปจนถึงของสมนาคุณ ประกัน การรับเงิน และเอกสารหลังลูกค้าเซ็น</p>
+  <div class="files">
+    <div class="file"><span class="k">วิดีโอที่ 1</span><span class="v">ช่วงเช้า</span><span class="d">2026-11-23 11-30-41.mov · 1:43:18</span></div>
+    <div class="file"><span class="k">วิดีโอที่ 2</span><span class="v">ช่วงบ่าย</span><span class="d">2026-11-23 14-10-01.mov · 1:20:21</span></div>
+  </div>
+  <p class="note">เวลาเริ่มนับจากต้นวิดีโอแต่ละไฟล์ สรุปจากเสียงถอดอัตโนมัติประกอบภาพหน้าจอ เวลาที่อ้างเป็นช่วงโดยประมาณ ชื่อตัวอย่างและตัวเลขในแบบเป็นข้อมูลที่ใช้สาธิต</p>
+</header>
+<nav class="toc" aria-label="สารบัญสรุปประชุม"><div class="wrap">
+  <a href="#summary">สรุปรวม</a>
+  <a href="#morning">คลิปเช้า</a>
+  <a href="#afternoon">คลิปบ่าย</a>
+  <a href="#detail">เจาะประเด็น</a>
+  <a href="#next">งานที่ต้องทำต่อ</a>
+  <a href="#open">ประเด็นค้าง</a>
+</div></nav>
+<main class="wrap">
+<section id="summary">
+  <h2>สรุปรวม</h2>
+  <div class="pillars">
+  <div class="pillar"><b>เห็นคิวก่อนทำใบจอง</b><span>อธิบายสถานะที่รุ่นย่อยให้เซลส์บอกลูกค้าได้ และแยกราคาต่อคันกับยอดรวม</span></div>
+  <div class="pillar"><b>แยกของแถมกับของซื้อ</b><span>ทำรายการที่เลือกให้อ่านง่าย จัดการเพิ่ม–ลบในหน้าที่เหมาะสม และเช็กวงเงินตอนเลือก</span></div>
+  <div class="pillar"><b>แยกเงินจองกับมัดจำอุปกรณ์</b><span>ให้ระบบคำนวณมัดจำจากอัตรารายชิ้น ส่วนเซลส์บันทึกยอดรับจริงและเห็นยอดคงเหลือ</span></div>
+</div>
+<p class="note"><strong>เรื่องที่ยังรอยืนยัน</strong> ขั้นตอนแก้ไขใบจองที่ลูกค้าเซ็นแล้วมีข้อเสนอให้ยกเลิกเลขเดิมและออกเลขใหม่ ทีมพักงานเอกสารแนบท้ายไว้ระหว่างรอคำยืนยัน <a href="#b-appendix">คลิปบ่าย 1:18:00</a></p>
+
+</section>
+<section id="morning">
+  <h2>วิดีโอที่ 1 · ช่วงเช้า</h2>
+  <p class="sec-meta">2026-11-23 11-30-41.mov · 1:43:18</p>
+  <div class="table-wrap"><table aria-label="ไทม์ไลน์ช่วงเช้า"><thead><tr><th scope="col">เวลาในคลิป</th><th scope="col">เรื่องที่คุย</th></tr></thead><tbody class="timeline-rows">
+    <tr id="a-brand"><td class="t"><time class="range-part" datetime="PT0S">00:00</time><span class="to">–<time class="range-part" datetime="PT540S">09:00</time></span></td><td><strong>ภาพรถและโลโก้ตามรุ่น</strong>ทดสอบการ์ดรุ่นหลักบน iPad โดยเฉพาะโลโก้ MU-X ที่อาจกลืนกับพื้นหลังเทา ลองย่อโลโก้ ทำฉากให้สว่างขึ้น ลดการไล่สีที่ปุ่มลูกศร และหาโลโก้รายรุ่นจากเว็บไซต์หรือโบรชัวร์ Isuzu</td></tr>
+<tr id="a-assets"><td class="t"><time class="range-part" datetime="PT540S">09:00</time><span class="to">–<time class="range-part" datetime="PT840S">14:00</time></span></td><td><strong>ส่งภาพให้ Flutter และเปลี่ยนภาพจากหลังบ้าน</strong>คุยให้ดึงภาพพื้นหลัง รถ และโลโก้มาจากหลังบ้าน เพื่อเปลี่ยนได้ และให้ทีมแอปขึ้นโครงหน้ารอก่อนได้ ทวนวิธีเตรียมภาพหน้าเข้าสู่ระบบและดูการครอปบนมือถือ</td></tr>
+<tr id="a-header"><td class="t"><time class="range-part" datetime="PT840S">14:00</time><span class="to">–<time class="range-part" datetime="PT1800S">30:00</time></span></td><td><strong>ภาพหัวหน้าสร้างใบจอง</strong>เทียบหัวภาพที่ตัดตรงกับแบบไล่สีต่อเข้าพื้นขาว ขอให้ลดพื้นที่มืด และส่งภาพแบนเนอร์แยกจากพื้นหลังสำหรับ Flutter โดยให้ทดลองสัดส่วนและระดับการไล่สีก่อน</td></tr>
+<tr id="a-responsive"><td class="t"><time class="range-part" datetime="PT1800S">30:00</time><span class="to">–<time class="range-part" datetime="PT2520S">42:00</time></span></td><td><strong>ข้อความรับรถและภาพบนจอแคบ</strong>เสนอให้มีหมายเหตุกำกับ “รับรถทันที” แล้วให้ดีลเลอร์ช่วยตรวจคำ ทวนการครอปและตำแหน่งโลโก้บน iPad กับมือถือ โดยให้ทำ iPad ให้ทันก่อน และใช้การย่อภาพเป็นทางชั่วคราว</td></tr>
+<tr id="a-queue-logic"><td class="t"><time class="range-part" datetime="PT2520S">42:00</time><span class="to">–<time class="range-part" datetime="PT2595S">43:15</time></span></td><td><strong>ให้หลังบ้านคำนวณสถานะคิว</strong>ให้หลังบ้านประมวลผลว่าสถานะใดเป็นรับรถทันทีหรือรอคิว แล้วส่งค่าให้แอปแสดง เพื่อลดการฝังกติกาคิวไว้ใน Flutter</td></tr>
+<tr id="a-accessory-layout"><td class="t"><time class="range-part" datetime="PT2595S">43:15</time><span class="to">–<time class="range-part" datetime="PT2880S">48:00</time></span></td><td><strong>โครงหน้าของสมนาคุณและอุปกรณ์ตกแต่ง</strong>เทียบฉากหลังโทนเทากับแบบไล่สี แล้วไล่ของสมนาคุณ ประกันภัย พ.ร.บ. และสามหมวดย่อย ได้แก่ อุปกรณ์ตกแต่ง โครงต่อและตัวถัง และอุปกรณ์เสริมอื่น ๆ ด้านล่างสรุปจำนวนของสมนาคุณและยอดอุปกรณ์หลังหักเทิร์น</td></tr>
+<tr id="a-qty-picker"><td class="t"><time class="range-part" datetime="PT2880S">48:00</time><span class="to">–<time class="range-part" datetime="PT3600S">1:00:00</time></span></td><td><strong>ปุ่มจำนวนและการย้ายรายการที่เลือก</strong>เทียบปุ่มบวก–ลบที่เห็นทันทีและแบบแตะเพื่อเปิด ให้รายการที่มีหลายชิ้นอ่านได้ง่าย มีข้อเสนอให้รอ 3 วินาทีก่อนย้ายของขึ้นกลุ่มเลือกแล้วเพื่อให้ปรับจำนวนต่อได้</td></tr>
+<tr id="a-trade"><td class="t"><time class="range-part" datetime="PT3600S">1:00:00</time><span class="to">–<time class="range-part" datetime="PT4000S">1:06:40</time></span></td><td><strong>ปุ่มเพิ่มจำนวนกับรายการที่หักเทิร์น</strong>เริ่มจากปุ่มบวก แล้วเปิดตัวปรับจำนวนเมื่อเลือก เมื่อกลับเป็นศูนย์ให้กลับเป็นปุ่มบวก รายการที่มีหักเทิร์นเปิดฟอร์มรายละเอียด ส่วนรายการทั่วไปเพิ่มได้ทันที และยังกดที่รายการเพื่อใส่รายละเอียดได้</td></tr>
+<tr id="a-gift-search"><td class="t"><time class="range-part" datetime="PT4000S">1:06:40</time><span class="to">–<time class="range-part" datetime="PT4145S">1:09:05</time></span></td><td><strong>ค้นหาอุปกรณ์และเพิ่มของสมนาคุณ</strong>ค้นข้ามหมวด แสดงจำนวนผลต่อหมวดและสถานะไม่พบ เมื่อเคลียร์คำค้นให้กลับมาที่รายการทั้งหมด หน้าเพิ่มของสมนาคุณใช้การเลือกเข้า–ออกและบันทึก</td></tr>
+<tr id="a-gift-limit"><td class="t"><time class="range-part" datetime="PT4145S">1:09:05</time><span class="to">–<time class="range-part" datetime="PT4440S">1:14:00</time></span></td><td><strong>ตรวจวงเงินและทวนสถานะที่เลือก</strong>ทวนเคสติ๊กของสมนาคุณที่เกินวงเงินให้แจ้งทันทีในหน้าเลือก และให้สถานะระหว่างรายการหลักกับหน้าเพิ่มตรงกัน แยกพฤติกรรมของรายการตั้งต้นออกจากรายการที่เพิ่มเอง</td></tr>
+<tr id="a-finance-rule"><td class="t"><time class="range-part" datetime="PT4440S">1:14:00</time><span class="to">–<time class="range-part" datetime="PT4680S">1:18:00</time></span></td><td><strong>ไฟแนนซ์เมื่อไม่เลือกประกัน</strong>ทีมยกกรณีเอาประกันออกในขั้นก่อนหน้าแล้วมาเลือกซื้อแบบไฟแนนซ์ คุยเรื่องการแจ้งเหตุผลและทางกลับไปแก้ พร้อมตั้งคำถามว่ากติกามาจากดีลเลอร์หรือผู้ให้ไฟแนนซ์</td></tr>
+<tr id="a-finance-position"><td class="t"><time class="range-part" datetime="PT4680S">1:18:00</time><span class="to">–<time class="range-part" datetime="PT5040S">1:24:00</time></span></td><td><strong>เทียบตำแหน่งประกันกับประเภทการซื้อ</strong>คุยสองทาง คือจัดประกันกับไฟแนนซ์ไว้ขั้นเดียวเพื่อเช็กพร้อมกัน หรือคงประกันไว้ในขั้นของสมนาคุณและให้คำอธิบายพร้อมทางกลับไปแก้</td></tr>
+<tr id="a-payment-layout"><td class="t"><time class="range-part" datetime="PT5040S">1:24:00</time><span class="to">–<time class="range-part" datetime="PT5520S">1:32:00</time></span></td><td><strong>โครงหน้ารับเงินและลำดับตัวเลข</strong>เสนอให้ผู้ใช้เลือกประเภทซื้อเอง ดึงยอดเงินจองจากหลังบ้านและบันทึกเหตุผลหากไม่มีเงินจอง แยกยอดอุปกรณ์หลังหักเทิร์น ยอดมัดจำที่ต้องชำระ รายการที่รับแล้ว และยอดคงเหลือให้อ่านแยกกัน</td></tr>
+<tr id="a-pay-booking"><td class="t"><time class="range-part" datetime="PT5520S">1:32:00</time><span class="to">–<time class="range-part" datetime="PT5695S">1:34:55</time></span></td><td><strong>เพิ่มรายการรับเงินจอง</strong>สาธิตเลือกวิธีชำระ บันทึกวันเวลาและยอดรับ แล้วแสดงรายการพร้อมสถานะตรวจสอบและยอดคงเหลือ</td></tr>
+<tr id="a-pay-accessory"><td class="t"><time class="range-part" datetime="PT5695S">1:34:55</time><span class="to">–<time class="range-part" datetime="PT5900S">1:38:20</time></span></td><td><strong>ทวนต้นแบบฟอร์มรับมัดจำอุปกรณ์</strong>แบบช่วงเช้ายังมีช่องแปลงเปอร์เซ็นต์กับเงินบาท ทีมทักว่ารอบถัดไปต้องเห็นยอดมัดจำคงเหลือชัดและไม่ใช้ถ้อยคำเดียวกับยอดสุทธิหลังหักเทิร์น ช่วงบ่ายตกลงให้ระบบคำนวณเปอร์เซ็นต์แทน</td></tr>
+<tr id="a-summary"><td class="t"><time class="range-part" datetime="PT5900S">1:38:20</time><span class="to">–<time class="range-part" datetime="PT6008S">1:40:08</time></span></td><td><strong>สรุปรายการจองและหน้าอนุมัติ</strong>เสนอให้สรุปข้อมูลลูกค้า ของสมนาคุณและอุปกรณ์ รวมถึงมัดจำ พร้อมปุ่มดูรายละเอียด และให้แบบสัมพันธ์กับหน้ารายละเอียดใบจองและหน้าอนุมัติของผู้จัดการ</td></tr>
+<tr id="a-witness"><td class="t"><time class="range-part" datetime="PT6008S">1:40:08</time><span class="to">–<time class="range-part" datetime="PT6198S">1:43:18</time></span></td><td><strong>ขั้นลงชื่อพยานหลังลูกค้าเซ็น</strong>ทวนทางเลือกให้ผู้จองระบุพยานหรือใช้พยานบริษัท และทิ้งคำถามว่ากดกลับหรือออกกลางทางแล้วใบจองจะอยู่สถานะใด ก่อนส่งต่อให้ผู้จัดการอนุมัติ</td></tr>
+  </tbody></table></div>
+</section>
+<section id="afternoon">
+  <h2>วิดีโอที่ 2 · ช่วงบ่าย</h2>
+  <p class="sec-meta">2026-11-23 14-10-01.mov · 1:20:21</p>
+  <div class="table-wrap"><table aria-label="ไทม์ไลน์ช่วงบ่าย"><thead><tr><th scope="col">เวลาในคลิป</th><th scope="col">เรื่องที่คุย</th></tr></thead><tbody class="timeline-rows">
+    <tr id="b-brand"><td class="t"><time class="range-part" datetime="PT0S">00:00</time><span class="to">–<time class="range-part" datetime="PT206S">03:26</time></span></td><td><strong>หน้าแรกและหน้ารุ่นหลัก</strong>รีวิวรูปแบนเนอร์และส่วนล่างของหน้าแรก ขอใช้โลโก้จริงตามรุ่น เช่น ตรวจจากสื่อแบรนด์ก่อนทำเอง ปรับป้าย 4x2 ให้อ่านชัด และเพิ่มน้ำหนักให้หัวข้อเลือกรุ่นหลัก</td></tr>
+<tr id="b-queue"><td class="t"><time class="range-part" datetime="PT206S">03:26</time><span class="to">–<time class="range-part" datetime="PT303S">05:03</time></span></td><td><strong>รุ่นย่อย ราคา และสถานะคิว</strong>โชว์สถานะรับรถทันทีหรือคิวในขั้นเลือกรุ่นย่อย เพิ่มคำอธิบายว่าต้องดำเนินการซื้อให้เรียบร้อยก่อนรับรถ และแยกราคาต่อคันกับยอดรวมเมื่อจองหลายคัน</td></tr>
+<tr id="b-accessory-entry"><td class="t"><time class="range-part" datetime="PT303S">05:03</time><span class="to">–<time class="range-part" datetime="PT720S">12:00</time></span></td><td><strong>หน้าของสมนาคุณและอุปกรณ์ตกแต่ง</strong>แบบที่สาธิตมีของสมนาคุณติ๊กไว้ตั้งต้นเก้ารายการ ขอให้เห็นสองกลุ่มหลักชัดขึ้น และจัดประกันกับ พ.ร.บ. ให้เห็นความสัมพันธ์ในโครงหน้าโดยไม่ทำให้ดูว่ามีสี่หมวดหลักแบบเดิม</td></tr>
+<tr id="b-quantity"><td class="t"><time class="range-part" datetime="PT720S">12:00</time><span class="to">–<time class="range-part" datetime="PT1080S">18:00</time></span></td><td><strong>การจัดประกันและจำนวนอุปกรณ์</strong>วางตัวเลือกชั้นประกันต่อจากการเลือกประกัน ชอบรายการของแต่งที่สรุปสั้นและค่อยกดแก้จำนวน ทวนหน่วยชิ้นหรือชุดและผลต่อราคาในมาสเตอร์</td></tr>
+<tr id="b-gift-edit"><td class="t"><time class="range-part" datetime="PT1080S">18:00</time><span class="to">–<time class="range-part" datetime="PT1440S">24:00</time></span></td><td><strong>แก้ชุดของสมนาคุณในหน้าเดียว</strong>เสนอให้หน้าเพิ่มเห็นรายการที่เลือกอยู่ตั้งแต่เปิด เพื่อถอดของเดิมและเลือกของใหม่ได้ทันที ส่วนสรุปแสดงเฉพาะที่เลือกจริง มีข้อเสนอให้พิจารณารูปประกอบเฉพาะของที่แถมบ่อย</td></tr>
+<tr id="b-gift-states"><td class="t"><time class="range-part" datetime="PT1440S">24:00</time><span class="to">–<time class="range-part" datetime="PT1569S">26:09</time></span></td><td><strong>เกินวงเงิน ค้นหา และยืนยัน</strong>ลองเคสของสมนาคุณเกินวงเงินให้แนะนำเลือกชิ้นอื่น ผลค้นหายังเห็นสถานะที่เลือก ล้างคำค้นเพื่อคืนรายการทั้งหมด และคงปุ่มยืนยันเพื่อกันกดพลาด</td></tr>
+<tr id="b-trade-fields"><td class="t"><time class="range-part" datetime="PT1569S">26:09</time><span class="to">–<time class="range-part" datetime="PT1800S">30:00</time></span></td><td><strong>เงื่อนไขแสดงช่องหักเทิร์น</strong>ปรับชื่อส่วนรายการให้เข้าใจง่าย และให้แสดงช่องกรอกเมื่อมาสเตอร์ระบุว่ารายการหักเทิร์นได้ รายการอื่นซ่อนส่วนนี้</td></tr>
+<tr id="b-stepper"><td class="t"><time class="range-part" datetime="PT1800S">30:00</time><span class="to">–<time class="range-part" datetime="PT2160S">36:00</time></span></td><td><strong>ปุ่มจำนวนและการนำอุปกรณ์ออก</strong>รายการที่มีจำนวนตายตัวไม่ต้องให้เลือกจำนวน ส่วนรายการที่เพิ่มได้หลายชิ้นให้วางจำนวนและหน่วยใกล้ชื่อรายการ ทวนทั้งกรณีลดจำนวนและลบรายการที่บันทึกแล้ว</td></tr>
+<tr id="b-remove-search"><td class="t"><time class="range-part" datetime="PT2160S">36:00</time><span class="to">–<time class="range-part" datetime="PT2520S">42:00</time></span></td><td><strong>ลบรายการและค้นหาข้ามหมวด</strong>ทวนว่าลดจำนวนถึงศูนย์แล้วควรถือเป็นการลบหรือให้ยืนยันแยก โชว์จำนวนที่เลือกในแต่ละหมวดและผลค้นหารวม โดยใช้ตัวอย่างจริงที่ชื่อคล้ายกันในคนละหมวด</td></tr>
+<tr id="b-search-edit"><td class="t"><time class="range-part" datetime="PT2520S">42:00</time><span class="to">–<time class="range-part" datetime="PT2880S">48:00</time></span></td><td><strong>ปรับจำนวนจากผลค้นหาและจังหวะบันทึก</strong>ทวนว่าผลค้นหาข้ามหมวดควรใช้ปรับจำนวนได้โดยไม่ต้องกลับไปเปิดทีละหมวด แยกปุ่มปรับจำนวนเร็วจากการเปิดรายละเอียดและทวนว่าจะยืนยันหรือบันทึกที่จุดไหน</td></tr>
+<tr id="b-qty-trade"><td class="t"><time class="range-part" datetime="PT2880S">48:00</time><span class="to">–<time class="range-part" datetime="PT3050S">50:50</time></span></td><td><strong>แก้จำนวนให้สัมพันธ์กับยอดหักเทิร์น</strong>ปรับจำนวนได้จากรายการสำหรับของที่ไม่มีหักเทิร์น ส่วนรายการที่มีหักเทิร์นให้เปิดแผงแก้ไขเพื่อทวนยอด และทำจุดกดของสองกรณีให้เข้าใจง่าย</td></tr>
+<tr id="b-queue-ui"><td class="t"><time class="range-part" datetime="PT3050S">50:50</time><span class="to">–<time class="range-part" datetime="PT3420S">57:00</time></span></td><td><strong>ความชัดของส่วนคิวและการทวนลอจิก</strong>ส่วนคิวหาเจอยาก ขอให้แยกจากข้อมูลรุ่นด้วยสีหรือพื้นหลัง และทดสอบบนแท็บเล็ตโดยไม่ใช้สีที่ทำให้เข้าใจว่าเป็นข้อผิดพลาด นัดคุยแยกกับผู้รับผิดชอบลอจิกคิว ก่อนเปลี่ยนลิงก์ประชุมไปรีวิวหน้ารายละเอียดการจอง</td></tr>
+<tr id="b-booking-details"><td class="t"><time class="range-part" datetime="PT3420S">57:00</time><span class="to">–<time class="range-part" datetime="PT3600S">1:00:00</time></span></td><td><strong>รายละเอียดการจองและประเภทการซื้อ</strong>ปรับหน้าประเภทการซื้อ เงินจอง และมัดจำ ให้เห็นยอดที่ต้องชำระและยอดรับแล้ว ซื้อแบบไฟแนนซ์เพิ่มช่องระบุชื่อไฟแนนซ์ แม้ไม่ได้แถมประกันก็ยังเลือกประเภทการซื้อได้</td></tr>
+<tr id="b-receive"><td class="t"><time class="range-part" datetime="PT3600S">1:00:00</time><span class="to">–<time class="range-part" datetime="PT3960S">1:06:00</time></span></td><td><strong>เงินจองและวันรับมัดจำอุปกรณ์</strong>เงินจองดึงยอดจากหลังบ้านและแสดงยอดคงเหลือ มัดจำอุปกรณ์บันทึกได้ตั้งแต่สร้างใบจองหากรับเงินจริง และเลื่อนไปรับภายหลังได้</td></tr>
+<tr id="b-deposit-master"><td class="t"><time class="range-part" datetime="PT3960S">1:06:00</time><span class="to">–<time class="range-part" datetime="PT4320S">1:12:00</time></span></td><td><strong>ตั้งอัตรามัดจำรายชิ้นจากหลังบ้าน</strong>มาสเตอร์อุปกรณ์กำหนดอัตราตามสินค้า ให้ระบบคำนวณยอดบาทรายชิ้นแล้วรวม คุยเรื่องปัดยอดให้กลมและแสดงอัตราที่ตรงกับยอดหลังปัด</td></tr>
+<tr id="b-deposit-receipt"><td class="t"><time class="range-part" datetime="PT4320S">1:12:00</time><span class="to">–<time class="range-part" datetime="PT4627S">1:17:07</time></span></td><td><strong>รับมัดจำหลายครั้งและจัดการยอดขาดหรือเกิน</strong>ตัดช่องกรอกเปอร์เซ็นต์หน้าแอป บันทึกรับเงินจริงตามธุรกรรม ยอดขาดให้แสดงคงเหลือ ช่วงท้ายคุยให้รับเกินเป้ามัดจำได้ถึงราคาของ พร้อมแจ้งสถานะ และให้เช็กเงื่อนไขก่อนให้เลขเครื่อง</td></tr>
+<tr id="b-model-scope"><td class="t"><time class="range-part" datetime="PT4627S">1:17:07</time><span class="to">–<time class="range-part" datetime="PT4680S">1:18:00</time></span></td><td><strong>ขอบเขตรถใหญ่ในหน้ารุ่นหลัก</strong>ทวนว่าดีลเลอร์นี้ไม่มีรถใหญ่ แต่ถ้านำระบบไปใช้กับดีลเลอร์อื่นอาจต้องรองรับ</td></tr>
+<tr id="b-appendix"><td class="t"><time class="range-part" datetime="PT4680S">1:18:00</time><span class="to">–<time class="range-part" datetime="PT4821S">1:20:21</time></span></td><td><strong>พักแนวทางเอกสารแนบท้ายใบจองไว้ก่อน</strong>ฝ่ายกฎหมายเสนอให้ยกเลิกเลขจองเดิม ออกเอกสารยกเลิกเงินจอง แล้วออกเลขจองใหม่ ซึ่งต่างจากแนวทางใช้เลขเดิมและแนบเอกสาร รอผู้มีอำนาจยืนยันแนวทาง รวมถึงแบบฟอร์มและผลต่อข้อกำหนดและเงื่อนไข</td></tr>
+  </tbody></table></div>
+</section>
+<section id="detail">
+  <h2>เจาะประเด็น</h2>
+  <h3>ภาพรถและสถานะคิว</h3>
+  <p>ทำภาพรถและโลโก้ให้ชัดบน iPad ก่อน ให้หลังบ้านคำนวณสถานะคิวแล้วส่งผลมาให้แอปแสดง ช่วงบ่ายขอเน้นพื้นที่คิวให้เห็นได้เร็วและให้ถ้อยคำ “รับรถทันที” มีคำอธิบายว่าต้องดำเนินการซื้อให้เรียบร้อยก่อน การใช้สีและข้อความยังต้องทวน</p>
+  <p class="source-links"><a href="#a-queue-logic">คลิปเช้า 42:00</a> · <a href="#b-queue">คลิปบ่าย 03:26</a> · <a href="#b-queue-ui">คลิปบ่าย 50:50</a></p>
+  <h3>ของสมนาคุณและอุปกรณ์ตกแต่ง</h3>
+  <p class="source-links"><a href="#a-trade">คลิปเช้า 1:00:00–1:14:00</a> · <a href="#b-gift-edit">คลิปบ่าย 18:00–36:00</a></p>
+  <ul>
+    <li><strong>ค้นหาข้ามหมวด:</strong> แสดงผลตามหมวดพร้อมจำนวนรายการ มีข้อความเมื่อไม่พบ และกลับมาแสดงรายการทั้งหมดเมื่อล้างคำค้น</li>
+    <li><strong>เพิ่มหรือนำของสมนาคุณออก:</strong> รายการที่เลือกและสถานะเช็กบ็อกซ์ต้องตรงกันทั้งหน้าหลักและหน้าเพิ่มรายการ เมื่อเอารายการที่เพิ่มเองออก ให้เอาออกจากกลุ่มที่เลือกแล้วและกลับไปเลือกใหม่ได้ รายการที่จัดไว้ตั้งต้นควรยังให้เลือกคืนได้ โดยช่วงบ่ายขอให้ส่วนสรุปแสดงเฉพาะรายการที่ยังเลือกอยู่</li>
+    <li><strong>วงเงินของสมนาคุณ:</strong> เมื่อลองเพิ่มของแล้วเกินวงเงิน ให้ระบบแจ้งและกันการเพิ่ม ตัวอย่างในที่ประชุมคือวงเงิน 5,000 บาท ใช้ไป 4,900 บาท จึงเพิ่มของราคา 500 บาทไม่ได้</li>
+    <li><strong>จำนวนและการหักเทิร์น:</strong> วางจำนวนและหน่วยใกล้ชื่อ ให้ปรับได้เฉพาะรายการที่มีหลายจำนวน และเปิดช่องหักเทิร์นเฉพาะรายการที่มาสเตอร์รองรับ ยังเปิดรายละเอียดรายการเพื่อใส่หมายเหตุได้</li>
+  </ul>
+  <h3>ประเภทการซื้อ ประกัน และการรับเงินจอง</h3>
+  <p class="source-links"><a href="#a-finance-rule">คลิปเช้า 1:14:00–1:32:00</a> · <a href="#b-booking-details">คลิปบ่าย 57:00–1:06:00</a></p>
+  <ul>
+    <li><strong>ประกันกับไฟแนนซ์:</strong> ช่วงเช้าพิจารณาว่าต้องแจ้งหรือกันการไปต่ออย่างไรถ้าไม่ได้เลือกประกัน ช่วงบ่ายผู้รีวิวย้ำว่าให้เลือกซื้อแบบไฟแนนซ์ได้แม้ไม่ได้แถมประกัน ช่องชื่อไฟแนนซ์เปิดตามประเภทการซื้อ และแสดงวันที่คาดว่าจะออกรถทั้งสองแบบ</li>
+    <li><strong>เงินจองรถ:</strong> ดึงยอดที่กำหนดจากหลังบ้าน บันทึกเหตุผลถ้าไม่มีเงินจอง และให้เห็นยอดที่รับแล้วกับยอดคงเหลือ ตัวอย่างในแบบคือยอด 1,000 บาท รับ 900 บาท เหลือ 100 บาท</li>
+    <li><strong>วันรับมัดจำอุปกรณ์:</strong> บันทึกได้ตั้งแต่สร้างใบจองเมื่อรับเงินแล้ว หรือทยอยรับภายหลัง เงื่อนไขการรับเงินให้ครบก่อนจัดรถยังต้องทวนกับหลังบ้าน</li>
+  </ul>
+  <h3>มัดจำอุปกรณ์และรายการรับชำระ</h3>
+  <p class="source-links"><a href="#b-deposit-master">คลิปบ่าย 1:06:00–1:17:07</a></p>
+  <ul>
+    <li><strong>ตั้งค่ารายชิ้นในมาสเตอร์อุปกรณ์:</strong> ตั้งอัตรามัดจำต่างกันได้ตามรายการ อาจต้องเก็บราคาซื้อ ราคาขาย และหน่วยนับประกอบ อัตราในแอปควรดึงจากการตั้งค่าหลังบ้าน</li>
+    <li><strong>คำนวณเป็นเงินบาทก่อนรวม:</strong> คิดมัดจำจากราคาและอัตราของแต่ละชิ้น แล้วรวมยอดบาท ตัวอย่างในที่ประชุมคือมัดจำท่อ 100 บาทกับมัดจำล้อ 1,000 บาท รวมเป็น 1,100 บาท แม้ทั้งสองชิ้นใช้อัตรา 10% ในที่ประชุมเสนอให้ระบบปัดยอดให้กลมและแสดงอัตราที่สอดคล้องกับยอดหลังปัด</li>
+    <li><strong>ยอดที่ต้องชำระกับยอดที่รับจริง:</strong> ยอดมัดจำมาจากการคำนวณ หน้ารับชำระตัดช่องกรอกเปอร์เซ็นต์ออก รับเป็นเงินบาทและแบ่งจ่ายได้หลายครั้ง บันทึกตามรายการและวิธีจ่ายจริง หลังบ้านตรวจและล็อกการแก้ไขรายการที่ตรวจผ่าน</li>
+    <li><strong>ยอดขาดและยอดเกิน:</strong> เมื่อยอดขาดให้แสดงคงเหลือ ช่วงแรกพูดถึงเก็บไม่เกินยอดที่คำนวณ ต่อมาระบุว่ารับเกินยอดมัดจำได้หากไม่เกินราคาของ และต้องแสดงสถานะให้เห็น ส่วนจุดที่แจ้งหรือปล่อยเลขเครื่องยังขอให้ตรวจสอบ</li>
+  </ul>
+  <h3>แก้ไขใบจองหลังลูกค้าเซ็น</h3>
+  <p class="source-links"><a href="#b-appendix">คลิปบ่าย 1:18:00–1:20:21</a></p>
+  <p>แนวทางก่อนหน้าคือใช้เลขจองเดิมแล้วเพิ่มเอกสารแนบ ช่วงท้ายคลิปบ่ายแจ้งว่าฝ่ายกฎหมายเสนอให้ยกเลิกเลขเดิม ออกเอกสารยกเลิกเงินจอง และออกเลขจองใหม่ตามกระบวนการเดิมพร้อมเอกสารเพิ่ม ทีมพักงานส่วนเอกสารแนบไว้ระหว่างรอคำยืนยันและตรวจว่าต้องปรับข้อกำหนดและเงื่อนไขการจองหรือไม่</p>
+</section>
+<section id="next">
+  <h2>งานที่ต้องทำต่อ</h2>
+  <ul>
+    <li><strong>ทีมออกแบบและทีมแอป:</strong> หาโลโก้ตามรุ่นจากต้นฉบับแบรนด์ ทดสอบหัวภาพบน iPad และมือถือ และตกลงรูปแบบส่งไฟล์กับ Flutter</li>
+    <li><strong>ทีมออกแบบ:</strong> ทำหัวข้อของสมนาคุณและอุปกรณ์ตกแต่งให้แยกชัด ปรับโครงเลือกของสมนาคุณให้เห็นรายการเดิมและสลับรายการได้ในหน้าเดียวกัน พร้อมสถานะเกินวงเงิน</li>
+    <li><strong>ทีมหลังบ้าน:</strong> นัดทวนลอจิกคิวและข้อมูลสถานะที่ส่งให้แอป ตรวจหน่วยนับและราคาในมาสเตอร์ เพิ่มเงื่อนไขอัตรามัดจำรายชิ้น และทวนกติกาปัดยอดกับเกณฑ์แจ้งให้ดำเนินการจัดรถ</li>
+    <li><strong>ทีมออกแบบและทีมแอป:</strong> ตัดช่องแก้เปอร์เซ็นต์มัดจำออกจากหน้ารับชำระ จัดยอดที่ต้องรับ รับแล้ว และคงเหลือให้สอดคล้องกันในรายละเอียดและสรุปรายการจอง</li>
+    <li><strong>ฝั่งดีลเลอร์:</strong> ยืนยันแนวทางแก้ไขใบจองพร้อมแบบฟอร์มที่ต้องใช้ และทวนคำอธิบายสถานะรับรถทันที</li>
+  </ul>
+</section>
+<section id="open">
+  <h2>ประเด็นค้าง</h2>
+  <h3>4 เรื่องที่ต้องรอ</h3>
+  <ol>
+    <li><strong>แก้ไขใบจองหลังลูกค้าเซ็น</strong> รอดีลเลอร์ยืนยันว่าจะใช้เลขเดิมแล้วแนบเอกสาร หรือยกเลิกแล้วออกเลขใหม่ รวมถึงแบบฟอร์มและเงื่อนไขที่ต้องแก้ ระหว่างนี้พักงานเอกสารแนบท้ายไว้</li>
+    <li><strong>คิวรถและเงื่อนไขจัดรถ</strong> รอทวนกติกาคิวและข้อความกำกับ “รับรถทันที” รวมถึงยืนยันว่าต้องรับหรือตรวจยอดเงินครบเมื่อไหร่ก่อนให้เลขเครื่อง</li>
+    <li><strong>อุปกรณ์และมัดจำ</strong> รอยืนยันหน่วยนับและฐานราคาในมาสเตอร์ วิธีปัดยอดมัดจำ และวิธียืนยันเมื่อลบอุปกรณ์ที่บันทึกแล้ว</li>
+    <li><strong>ประกันกับลายเซ็นพยาน</strong> หากผู้ให้ไฟแนนซ์มีเงื่อนไขประกันตอนอนุมัติ ต้องยืนยันว่าจะแจ้งในขั้นไหน ส่วนลายเซ็นพยานยังต้องตกลงว่าจะเดินต่ออย่างไรเมื่อลูกค้าออกกลางทาง</li>
+  </ol>
+  <h3>รายละเอียดที่ต้องยืนยัน</h3>
+  <ul class="open">
+    <li>รูปแบบสุดท้ายของปุ่มปรับจำนวนและการลบรายการที่บันทึกแล้ว รวมถึงจุดที่ต้องขอยืนยัน</li>
+    <li>หากผู้ให้ไฟแนนซ์มีเงื่อนไขประกันตอนอนุมัติ ต้องยืนยันว่าจะสื่อสารในขั้นไหน ช่วงบ่ายให้เลือกประเภทไฟแนนซ์ได้แม้ไม่ได้แถมประกัน</li>
+    <li>ในมาสเตอร์อุปกรณ์ต้องเก็บหน่วยนับอย่างไรเมื่อขายเป็นชิ้น คู่ หรือชุด รวมถึงใช้ฐานราคาใดในการคำนวณ</li>
+    <li>ปัดมัดจำของแต่ละชิ้นหรือยอดรวม ใช้หลักปัดเท่าไร และใช้ยอดที่ตรวจผ่านหรือยอดที่บันทึกเพื่อแจ้งหลังบ้านให้เลขเครื่อง</li>
+    <li>หลังลูกค้าเซ็นแล้ว จะใช้เอกสารแนบท้ายเลขเดิมหรือยกเลิกแล้วออกเลขใหม่ ต้องปรับแบบเอกสารหรือข้อกำหนดและเงื่อนไขหรือไม่</li>
+    <li>ถ้าลูกค้าออกจากหน้าลงชื่อพยานกลางทาง ต้องค้างสถานะ กลับไปเลือก หรือให้ใช้พยานฝ่ายบริษัทเพื่อเดินต่อ</li>
+  </ul>
+</section>
+
+</main>
+<footer class="wrap">
+  <p>อ้างอิงวิดีโอบันทึกการประชุมทั้งสองไฟล์ วันที่ 23 พฤศจิกายน 2569</p>
+  <p><a href="#top">กลับด้านบน</a></p>
+</footer>
+</body>
+</html>
